@@ -9,5 +9,5 @@ section backgrounds, timeline, hero image), light only, with a hamburger menu on
 - The header logo reads "tbragaf".
 - Navigation is a menu only (no cards). English only. No "Built with" line in the footer.
 - CV content is a draft in the owner's voice: reword together before publishing.
-- Deploy (not set up yet): GitHub Actions to GitHub Pages from the `tbragaf.github.io` repo. The old `cv` repo is archived after.
+- Deploy: `.github/workflows/deploy.yml` builds and publishes `dist` to GitHub Pages on every push to `main` (Settings, Pages, source "GitHub Actions"). The old `cv` repo is archived after.
 - Commands: `npm start` (dev), `npm run build` (typecheck + build), `npx prettier --write src`.
