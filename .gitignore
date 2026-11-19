@@ -3,3 +3,6 @@
 .DS_Store
 npm-debug.log*
 /.nx
+
+# The owner's private notes (performance reviews): never committed or published
+/private

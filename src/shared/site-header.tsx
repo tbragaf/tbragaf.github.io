@@ -1,6 +1,8 @@
+import { ListIcon, XIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { ExternalLink } from "./external-links";
 import { Route } from "./route";
+import { ThemeToggle } from "./theme-toggle";
 
 export interface ISiteHeaderProps {
     currentRoute: Route;
@@ -16,14 +18,12 @@ export function SiteHeader({ currentRoute }: ISiteHeaderProps) {
             </a>
             <button
                 type="button"
-                className="menu-toggle"
+                className="icon-button menu-toggle"
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
                 aria-controls="site-menu"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <span />
-                <span />
-                <span />
+                {isMenuOpen ? <XIcon size={24} /> : <ListIcon size={24} />}
             </button>
             <nav id="site-menu" className={isMenuOpen ? "site-menu open" : "site-menu"} aria-label="Main">
                 <a href={Route.Home} aria-current={currentRoute === Route.Home ? "page" : undefined}>
@@ -35,6 +35,7 @@ export function SiteHeader({ currentRoute }: ISiteHeaderProps) {
                 <a href={ExternalLink.GitHub}>GitHub</a>
                 <a href={ExternalLink.LinkedIn}>LinkedIn</a>
             </nav>
+            <ThemeToggle />
         </header>
     );
 }
