@@ -1,15 +1,15 @@
 :root {
     color-scheme: light dark;
-    --background-color: light-dark(#f7f9fa, #0e1519);
-    --header-background: light-dark(rgb(247 249 250 / 85%), rgb(14 21 25 / 85%));
-    --text-color: light-dark(#141a24, #f0f4f5);
-    --text-soft-color: light-dark(#222b37, #dbe3e6);
-    --muted-color: light-dark(#4a576b, #a3b0b6);
-    --rule-color: light-dark(#d6dbe4, #2a363d);
-    --accent-color: light-dark(#0e7a82, #4cb8c0);
-    --heading-color: light-dark(#0b6269, #4cb8c0);
-    --pill-background: light-dark(#0e7a82, #4cb8c0);
-    --pill-text-color: light-dark(#ffffff, #0e1519);
+    --background-color: light-dark(#faf7f2, #14110f);
+    --header-background: light-dark(rgb(250 247 242 / 85%), rgb(20 17 15 / 85%));
+    --text-color: light-dark(#1d1a17, #f5f1ec);
+    --text-soft-color: light-dark(#2e2924, #e0d9d0);
+    --muted-color: light-dark(#6b6258, #a8a095);
+    --rule-color: light-dark(#e5ded3, #2e2824);
+    --accent-color: light-dark(#c2410c, #fb923c);
+    --heading-color: light-dark(#9a3412, #fdba74);
+    --pill-border-color: light-dark(#d9cfc0, #3d352e);
+    --pill-text-color: light-dark(#4a4137, #d8cfc4);
     --content-width: 960px;
 }
 
@@ -378,12 +378,17 @@ a:hover {
 }
 
 .pill {
-    padding: 3px 11px;
-    border-radius: 999px;
-    background: var(--pill-background);
+    padding: 2px 9px;
+    border: 1px solid var(--pill-border-color);
+    border-radius: 6px;
     color: var(--pill-text-color);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.8rem;
+}
+
+.pill:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .languages {
