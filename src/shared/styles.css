@@ -245,12 +245,16 @@ a:hover {
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--rule-color);
     color: var(--heading-color);
-    font-size: 1.3rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.section-title::before {
+    content: "";
+    width: 4px;
+    height: 1.2em;
+    border-radius: 2px;
+    background: var(--accent-color);
 }
 
 .section-icon {
