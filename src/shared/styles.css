@@ -384,6 +384,7 @@ a:hover {
     color: var(--pill-text-color);
     font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
     font-size: 0.8rem;
+    cursor: default;
 }
 
 .pill:hover {
