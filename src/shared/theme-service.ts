@@ -1,4 +1,4 @@
-export type Theme = "system" | "light" | "dark";
+export type Theme = "light" | "dark";
 
 export interface IThemeService {
     getTheme(): Theme;
@@ -11,28 +11,27 @@ const STORAGE_KEY = "tbragaf.theme";
 export class ThemeService implements IThemeService {
     public constructor(
         private readonly storage: Storage | null,
-        private readonly root: HTMLElement
+        private readonly root: HTMLElement,
+        private readonly systemDarkQuery: MediaQueryList
     ) {}
 
     public getTheme(): Theme {
         const saved = this.read();
-        return saved === "light" || saved === "dark" ? saved : "system";
+        if (saved === "light" || saved === "dark") {
+            return saved;
+        }
+        return this.systemDarkQuery.matches ? "dark" : "light";
     }
 
     public setTheme(theme: Theme): void {
-        this.apply(theme);
+        this.root.dataset.theme = theme;
         this.write(theme);
     }
 
     public restoreTheme(): void {
-        this.apply(this.getTheme());
-    }
-
-    private apply(theme: Theme): void {
-        if (theme === "system") {
-            delete this.root.dataset.theme;
-        } else {
-            this.root.dataset.theme = theme;
+        const saved = this.read();
+        if (saved === "light" || saved === "dark") {
+            this.root.dataset.theme = saved;
         }
     }
 
@@ -47,11 +46,7 @@ export class ThemeService implements IThemeService {
 
     private write(theme: Theme): void {
         try {
-            if (theme === "system") {
-                this.storage?.removeItem(STORAGE_KEY);
-            } else {
-                this.storage?.setItem(STORAGE_KEY, theme);
-            }
+            this.storage?.setItem(STORAGE_KEY, theme);
         } catch {
             return;
         }

@@ -1,25 +1,18 @@
-import { CircleHalfIcon, MoonIcon, SunIcon, type Icon } from "@phosphor-icons/react";
+import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { useServices } from "./services-context";
-import type { Theme } from "./theme-service";
-
-const THEMES: { theme: Theme; label: string; icon: Icon }[] = [
-    { theme: "system", label: "Automatic", icon: CircleHalfIcon },
-    { theme: "light", label: "Light", icon: SunIcon },
-    { theme: "dark", label: "Dark", icon: MoonIcon }
-];
 
 export function ThemeToggle() {
     const { themeService } = useServices();
-    const [current, setCurrent] = useState<Theme>(() => themeService.getTheme());
-    const position = THEMES.findIndex(({ theme }) => theme === current);
-    const { label, icon: ThemeIcon } = THEMES[position];
-    const next = THEMES[(position + 1) % THEMES.length].theme;
-    const description = `Theme: ${label}`;
+    const [current, setCurrent] = useState(() => themeService.getTheme());
+    const isDark = current === "dark";
+    const ThemeIcon = isDark ? SunIcon : MoonIcon;
+    const description = isDark ? "Switch to light theme" : "Switch to dark theme";
 
-    const choose = (theme: Theme) => {
-        themeService.setTheme(theme);
-        setCurrent(theme);
+    const toggle = () => {
+        const next = isDark ? "light" : "dark";
+        themeService.setTheme(next);
+        setCurrent(next);
     };
 
     return (
@@ -28,7 +21,7 @@ export function ThemeToggle() {
             className="icon-button theme-toggle"
             aria-label={description}
             title={description}
-            onClick={() => choose(next)}>
+            onClick={toggle}>
             <ThemeIcon size={22} />
         </button>
     );

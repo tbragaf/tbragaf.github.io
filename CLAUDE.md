@@ -9,9 +9,9 @@ TypeScript with plain CSS, with a hamburger menu on mobile.
   900 px, the contacts with icons; on a phone everything is centred, with the contacts and download as round icon
   buttons. Sections sit in a 960 px column with a Phosphor icon and an uppercase teal title over a hairline. Source Sans
   Pro, high-contrast text. Tools are teal pills. Icons are Phosphor (`@phosphor-icons/react`, as in the ledger).
-- Light and dark (as in the ledger's spending-web): the system decides by default; the header's `ThemeToggle` cycles
-  Automatic, Light, Dark. `ThemeService` keeps the choice in localStorage (`tbragaf.theme`) and sets `data-theme` on
-  `<html>`; the colours in `styles.css` are `light-dark()` pairs. Services are built in `renderPage` and reach
+- Light and dark (as in the ledger's spending-web): the system decides by default; the header's `ThemeToggle` is a
+  two-state toggle (shows the sun when dark, the moon when light; no "automatic" state). `ThemeService` keeps only an
+  explicit choice in localStorage (`tbragaf.theme`) and sets `data-theme` on `<html>`; the colours in `styles.css` are `light-dark()` pairs. Services are built in `renderPage` and reach
   components through `useServices()`.
 - CV sections: Profile, Work experience, Side projects, Education, Languages. OutSystems is one `ExperienceEntry` with
   the titles held (`history`) and bullets grouped by theme (`ExperienceGroup`), each opening with a bold lead-in. The

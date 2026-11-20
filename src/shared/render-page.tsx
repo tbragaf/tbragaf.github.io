@@ -6,7 +6,11 @@ import "./styles.css";
 
 export function renderPage(page: ReactNode) {
     const services: IServices = {
-        themeService: new ThemeService(getLocalStorage(), document.documentElement)
+        themeService: new ThemeService(
+            getLocalStorage(),
+            document.documentElement,
+            window.matchMedia("(prefers-color-scheme: dark)")
+        )
     };
     services.themeService.restoreTheme();
     const root = createRoot(document.getElementById("root") as HTMLElement);
