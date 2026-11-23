@@ -153,13 +153,13 @@ export function CurriculumPage() {
                 <div className="timeline">
                     <ExperienceEntry
                         role="Plano Financeiro"
-                        organization="planofinanceiro.pt · personal project, in progress"
+                        organization="planofinanceiro.pt"
                         period="2026 – Present"
                         tools={financeAppTools}>
                         <p>
-                            A personal finance app built on an AI agent that reads Portuguese invoices and receipts
-                            (photos and PDFs) into structured data, for a web app, a mobile app and an MCP server that
-                            other chatbots can use.
+                            <a href={ExternalLink.PlanoFinanceiro}>A personal finance app</a> built on an AI agent that
+                            reads Portuguese invoices and receipts (photos and PDFs) into structured data, for a web
+                            app, a mobile app and an MCP server that other chatbots can use.
                         </p>
                     </ExperienceEntry>
                 </div>
