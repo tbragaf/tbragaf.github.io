@@ -9,7 +9,7 @@ export function SiteFooter() {
             </span>
             <span>
                 <a href={ExternalLink.GitHub}>GitHub</a> · <a href={ExternalLink.LinkedIn}>LinkedIn</a> ·{" "}
-                <a href={ExternalLink.Email}>Email</a>
+                <a href={ExternalLink.Email}>Email</a> · <a href={Route.Privacy}>Privacy</a>
             </span>
         </footer>
     );

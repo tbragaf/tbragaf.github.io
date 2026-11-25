@@ -1,7 +1,13 @@
 # tbragaf.github.io
 
-Personal site, two pages built by one Vite build: `/` (home) and `/cv/` (curriculum vitae). Plain Vite + React +
-TypeScript with plain CSS, with a hamburger menu on mobile.
+Personal site, three pages built by one Vite build: `/` (home), `/cv/` (curriculum vitae) and `/privacy/`. Plain
+Vite + React + TypeScript with plain CSS, with a hamburger menu on mobile.
+
+- No third-party requests (decided 25/11/2026): no analytics, cookies, forms or embeds, and nothing loaded from another
+  site. Source Sans Pro is self-hosted through Fontsource (`@fontsource/source-sans-pro`, latin subset, 400, 400
+  italic, 600, 700), imported at the top of `styles.css`, never from Google Fonts.
+- `/privacy/` (linked from the footer only) says the site collects nothing: the theme choice stays in the browser,
+  GitHub Pages logs IPs on its side, emails are used only to reply. Keep it true when the site changes.
 
 - Look (decided 18/11/2026, inspired by hgoncalves.uk/cv without copying it): a sticky header with round icon
   buttons; the `Hero` on the page background with a line under it, no band, card or gradient (a teal band, a tint and
@@ -31,7 +37,7 @@ TypeScript with plain CSS, with a hamburger menu on mobile.
 - The photo (`public/assets/tiago-braga-fernandes.jpg`, 19/11/2026; renamed from profile.jpg so browsers drop the cached old one) is a 440 px head-and-shoulders crop, not rotated, of the owner's own colour-edited
   version, colours untouched, not mirrored; shown at 176 px (128 on a phone).
 
-- `index.html` and `cv/index.html` are the two entries; `src/home` and `src/cv` hold each page, `src/shared` the header, footer, layout and `styles.css`.
+- `index.html`, `cv/index.html` and `privacy/index.html` are the three entries; `src/home`, `src/cv` and `src/privacy` hold each page, `src/shared` the header, footer, layout and `styles.css`.
 - Paths come from the `Route` enum, external URLs from `ExternalLink`; never a path string in a link.
 - The header logo reads "tbragaf".
 - Navigation is a menu only (no cards). English only. No "Built with" line in the footer.
