@@ -19,10 +19,9 @@ Vite + React + TypeScript with plain CSS, with a hamburger menu on mobile.
   two-state toggle (shows the sun when dark, the moon when light; no "automatic" state). `ThemeService` keeps only an
   explicit choice in localStorage (`tbragaf.theme`) and sets `data-theme` on `<html>`; the colours in `styles.css` are `light-dark()` pairs. Services are built in `renderPage` and reach
   components through `useServices()`.
-- CV sections: Profile, Work experience, Side projects, Education, Languages. OutSystems is one `ExperienceEntry` with
-  the titles held (`history`) and bullets grouped by theme (`ExperienceGroup`), each opening with a bold lead-in. The
-  side project is Plano Financeiro (planofinanceiro.pt), named but not linked while the site is not live; the ledger
-  repository is not public.
+- CV sections: Profile, Work experience, Education, Languages. No side or personal projects (28/11/2026). OutSystems
+  is one `ExperienceEntry` with the titles held (`history`) and bullets grouped by theme (`ExperienceGroup`), each
+  opening with a bold lead-in.
 - "Download CV" prints the page; an `@media print` block hides the header, footer and button and forces light.
   A generated static PDF is future work.
 - Highlights (19/11/2026) come from the owner's performance reviews in `private/performance-reviews.md`: git-ignored,
